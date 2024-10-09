@@ -1,0 +1,283 @@
+* {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: black;
+}
+/* Aplica a fonte Arial para toda a página, com fundo branco e texto preto para uma aparência limpa. */
+
+body, ion-app {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+/* Remove as margens e o padding padrão do body e do app Ionic, mantendo o fundo branco. */
+
+ion-header, ion-content, ion-footer {
+    background-color: #ffffff;
+}
+/* Define o fundo branco para as áreas principais da interface: cabeçalho, conteúdo e rodapé. */
+
+ion-header {
+    position: relative;
+}
+/* Posiciona o cabeçalho como relativo para permitir que elementos dentro dele possam ser posicionados de forma flexível. */
+
+#titulo {
+    font-size: 50px;
+}
+/* Define o tamanho da fonte do título para 50px, destacando-o visualmente. */
+
+.custom-toolbar {
+    height: 50px;
+    border-bottom: 1px solid #ccc; 
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    justify-content: space-between;
+}
+/* Toolbar customizada: altura de 50px, borda inferior cinza clara e utiliza flexbox para alinhar os itens. Adiciona espaçamento superior e inferior. */
+
+.menu-title {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white; 
+    color: black;
+}
+/* Define o estilo do título do menu: fonte em negrito, tamanho 18px, com cores branca e preta para contraste. */
+
+ion-toolbar {
+    --background: white;
+    position: relative;
+}
+/* Personaliza a toolbar Ionic para que tenha um fundo branco e posicionamento relativo. */
+
+#close {
+    box-shadow: none; 
+    --background: white;
+    color: black; 
+    position: absolute;
+    right: 10px;
+    top: 42%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+}
+/* Estilização do botão de fechar: sem sombra, fundo branco, texto preto, e posicionado à direita com alinhamento vertical central. */
+
+ion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; 
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+}
+/* Título no ion-toolbar: usa flexbox para espaçar itens igualmente, com padding horizontal de 20px. */
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+/* Container para imagens: usa flexbox para centralizar o conteúdo horizontalmente. */
+
+.image-container img {
+    width: 80px; 
+    height: auto;
+}
+/* Define o tamanho das imagens dentro do container de imagens, com largura de 80px e altura ajustável automaticamente. */
+
+.menu {
+    position: absolute;
+    left: 20px;
+    height: 100%;
+    margin-top: 5px;
+    align-items: center;
+}
+/* Estiliza o menu: posicionado à esquerda com altura total da tela e margem superior de 5px. Alinha os itens no centro. */
+
+#menu-button {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 20px; 
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Botão de menu: posicionado no canto inferior esquerdo, com padding, bordas arredondadas, e uma leve sombra para destacar visualmente. */
+
+.close-icon ion-button {
+    background-color: white; 
+    color: black; 
+    --background: white;
+}
+/* Botão de fechar: fundo branco com texto preto para manter consistência no esquema de cores. */
+
+#menu-nav {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+}
+/* Navegação do menu: ocupa a largura total, posicionada no topo com um fundo branco para destacar os links. */
+
+#menu-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+/* Remove as bolinhas da lista e margens/padding padrão para o menu de navegação. */
+
+#menu-nav li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+/* Estilo para os itens da lista de navegação: espaçamento de 10px e borda inferior cinza para separação visual. */
+
+#menu-nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;  
+    display: block;
+}
+/* Links de navegação: cor preta, sem sublinhado, e texto em negrito. O link ocupa toda a área do bloco para ser clicável. */
+
+.menu-button {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    margin-bottom: 10px; 
+    text-align: left;
+}
+/* Botão de menu: alinhado à esquerda com padding e sem borda. O fundo branco mantém a consistência com o resto da interface. */
+
+.menu-button .icon {
+    width: 30px;
+    height: auto;
+    margin-right: 10px; 
+}
+/* Ícones no botão de menu: define largura de 30px e adiciona um espaçamento de 10px à direita do ícone. */
+
+ion-menu {
+    --width: 250px;
+    --background: #ffffff;
+}
+/* Define a largura do menu lateral como 250px e o fundo como branco. */
+
+ion-content {
+    --background: #ffffff;
+    --padding-bottom: 56px;
+}
+/* O conteúdo principal (ion-content) tem fundo branco e padding inferior de 56px para manter espaçamento. */
+
+ion-tab-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #ffffff;
+}
+/* Barra de abas fixa na parte inferior, com fundo branco e largura total. Usa um z-index elevado para garantir que a barra fique sobre outros conteúdos. */
+
+.login-icon {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+/* Ícone de login posicionado no canto superior direito, com alinhamento vertical ao centro. */
+
+.login-icon img {
+    width: 40px;
+    height: auto;
+}
+/* Imagem do ícone de login: largura de 40px e altura ajustável automaticamente. */
+
+#container {
+    text-align: center;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 56px;
+    z-index: 5;
+}
+/* Estilo para o container principal: texto centralizado, com padding inferior e posição relativa. */
+
+#container strong {
+    font-size: 20px;
+    line-height: 26px;
+}
+/* Texto forte (negrito) dentro do container, com tamanho de fonte 20px e espaçamento de linha ajustado. */
+
+#container p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+}
+/* Parágrafos no container: define fonte 16px e espaçamento entre linhas, sem margens. */
+
+#container a {
+    text-decoration: none;
+}
+/* Links dentro do container: sem sublinhado. */
+
+.icon1 {
+    width: 60px;
+    height: 60px; 
+    text-decoration: none;
+} 
+/* Ícones personalizados com largura e altura definidas, sem decoração de texto. */
+
+.custom-input {
+    --background: white;
+    --color: black; /* Cor do texto dentro dos campos */
+    --placeholder-color: black; /* Placeholder em preto */
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 80%;
+    margin: 0 auto 15px auto;
+    height: 40px;
+}
+/* Estilos personalizados para campos de entrada: fundo e texto pretos, bordas arredondadas, e com largura de 80% centralizada. */
+
+ion-input {
+    padding: 5px;
+    color: black; /* Texto preto dentro do campo */
+    font-size: 16px;
+}
+/* Ajustes adicionais para os campos de entrada: padding e fonte de 16px. */
+
+ion-label {
+    --color: black; /* Texto dos labels em preto */
+}
+/* Cor preta para os rótulos dos campos. */
+
+.login-container {
+    width: 100%; /* Largura total */
+    max-width: 400px; /* Largura máxima do card */
+    margin: auto; /* Margem automática para centralizar */
+}
+/* Container de login: largura total com um limite de 400px para centralizar e melhorar a legibilidade. */
+
+.password-icon {
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+/* Ícone de senha: ajusta cor, tamanho e transforma o ícone em um elemento clicável (cursor pointer). */

@@ -1,0 +1,298 @@
+* {
+    font-family: Arial, sans-serif; /* Estilo da fonte e cores padrão */
+    background-color: #ffffff;
+    color: black;
+}
+
+/* Estilos para o body e ion-app */
+body, ion-app {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para cabeçalho, conteúdo e rodapé */
+ion-header, ion-content, ion-footer {
+    background-color: #ffffff;
+}
+
+/* Estilos para o button1 */
+#button1 {
+    align-items: center;
+    margin: 5%;
+}
+
+/* Estilo específico para o cabeçalho */
+ion-header {
+    position: relative;
+}
+
+/* Estilo do título */
+#titulo {
+    font-size: 50px;
+}
+
+/* Estilo da barra de ferramentas personalizada */
+.custom-toolbar {
+    height: 50px;
+    border-bottom: 1px solid #ccc; 
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    justify-content: space-between;
+}
+
+/* Estilo do título do menu */
+.menu-title {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white; 
+    color: black;
+}
+
+/* Estilo da toolbar */
+ion-toolbar {
+    --background: white;
+    position: relative;
+}
+
+/* Estilo do botão de fechar */
+#close {
+    box-shadow: none; 
+    --background: white;
+    color: black; 
+    position: absolute;
+    right: 10px;
+    top: 42%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Estilo do título */
+ion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; 
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+} 
+
+/* Estilo do contêiner da imagem */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo da imagem no contêiner */
+.image-container img {
+    width: 80px; 
+    height: auto;
+}
+
+/* Estilo do menu */
+.menu {
+    position: absolute;
+    left: 20px;
+    height: 100%;
+    margin-top: 5px;
+    align-items: center;
+}
+
+/* Estilo do botão do menu */
+#menu-button {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 20px; 
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do ícone de fechar */
+.close-icon ion-button {
+    background-color: white; 
+    color: black; 
+    --background: white;
+}
+
+/* Estilo da navegação do menu */
+#menu-nav {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* Estilos da lista de navegação do menu */
+#menu-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para itens da lista de navegação */
+#menu-nav li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Estilo dos links de navegação */
+#menu-nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;  
+    display: block;
+}
+
+/* Estilo do botão do menu */
+.menu-button {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    margin-bottom: 10px; 
+    text-align: left;
+}
+
+/* Estilo do ícone no botão do menu */
+.menu-button .icon {
+    width: 30px;
+    height: auto;
+    margin-right: 10px; 
+}
+
+/* Estilos do menu lateral */
+ion-menu {
+    --width: 250px;
+    --background: #ffffff;
+}
+
+/* Estilo do conteúdo do ion-content */
+ion-content {
+    --background: #ffffff;
+    --padding-bottom: 56px;
+}
+
+/* Estilo da barra de abas */
+ion-tab-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #ffffff;
+}
+
+/* Estilo do ícone de login */
+.login-icon {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo da imagem do ícone de login */
+.login-icon img {
+    width: 40px;
+    height: auto;
+}
+
+/* Estilo do contêiner */
+#container {
+    text-align: center;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 56px;
+    z-index: 5;
+}
+
+/* Estilo do texto em negrito no contêiner */
+#container strong {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+/* Estilo do parágrafo no contêiner */
+#container p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+}
+
+/* Estilo dos links no contêiner */
+#container a {
+    text-decoration: none;
+}
+
+/* Estilo do ícone 1 */
+.icon1 {
+    width: 60px;
+    height: 60px; 
+    text-decoration: none;
+} 
+
+/* Estilos para campos de entrada personalizados */
+.custom-input {
+    --background: white;
+    --color: black; /* Cor do texto dentro dos campos */
+    --placeholder-color: black; /* Placeholder em cinza */
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 80%;
+    margin: 0 auto 15px auto;
+    height: 40px;
+}
+
+/* Estilos para o ion-input */
+ion-input {
+    padding: 5px;
+    color: black; /* Texto preto dentro do campo */
+    font-size: 16px;
+}
+
+/* Estilos para labels */
+ion-label {
+    --color: black; /* Texto dos labels em preto */
+}
+
+/* Estilos para a container de login */
+.login-container {
+    width: 100%; /* Largura total */
+    max-width: 400px; /* Largura máxima do card */
+    margin: auto; /* Margem automática para centralizar */
+}
+
+/* Estilo para o ícone de senha */
+.password-icon {
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
+}
+
+/* Estilos para a imagem do logo */
+.logo-image {
+    padding-top: 40px;
+    margin-bottom: -25px;
+    display: block;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 140px; /* Ajuste o tamanho da logo (menor) */
+    height: auto; /* Mantém a proporção */
+}

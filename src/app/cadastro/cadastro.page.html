@@ -1,0 +1,71 @@
+<ion-header>
+  <!-- Importação do script InputMask para mascarar entradas como CPF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/inputmask.min.js"></script>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Container para centralizar o conteúdo de login -->
+  <div class="login-container" style="display: flex; justify-content: center; align-items: center; height: 85vh;">
+    
+    <!-- Card contendo o formulário de cadastro -->
+    <ion-card>
+      <ion-card-header>
+        <!-- Subtítulo do card (vazio, mas com margem superior) -->
+        <ion-card-subtitle style="text-align: center; margin-top: 20px;"></ion-card-subtitle>
+        
+        <!-- Título do card (centralizado) -->
+        <ion-card-title style="text-align: center; margin-bottom: 20px;">Realize seu cadastro</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Formulário de cadastro -->
+        <form>
+          <!-- Campo de entrada para Nome Completo -->
+          <ion-item class="custom-input">
+            <ion-input type="text" placeholder="Nome Completo" maxlength="50" required style="margin-top: -10px;"></ion-input>
+          </ion-item>
+
+          <!-- Campo de entrada para E-mail -->
+          <ion-item class="custom-input">
+            <ion-input type="text" placeholder="E-mail" maxlength="40" required style="margin-top: -10px;"></ion-input>
+          </ion-item>
+
+          <!-- Campo de entrada para CPF com máscara customizada (apenas números, com formatação de CPF) -->
+          <ion-item class="custom-input">
+            <ion-input
+              type="text"
+              placeholder="CPF"
+              maxlength="14"
+              required
+              id="cpf-input"
+              style="margin-top: -10px;"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{2})$/, '$1-$2');"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Campo de entrada para Senha -->
+          <ion-item class="custom-input">
+            <ion-input type="password" placeholder="Senha" maxlength="8" value="" style="margin-top: -10px;">
+              <!-- Componente para alternar a visibilidade da senha -->
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+
+          <!-- Campo de entrada para Confirmar Senha -->
+          <ion-item class="custom-input">
+            <ion-input type="password" placeholder="Confirmar Senha" maxlength="8" value="" style="margin-top: -10px;">
+              <!-- Componente para alternar a visibilidade da senha -->
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+
+          <!-- Div para exibir mensagem de erro se as senhas não coincidirem -->
+          <div id="mensagemErro" style="color: red; display: none; margin-top: 10px;">As senhas não coincidem.</div>
+
+          <!-- Botão centralizado para realizar o cadastro -->
+          <ion-button expand="full" type="submit" style="margin-top: 30px;" (click)="navigateToLogin()">CADASTRAR</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

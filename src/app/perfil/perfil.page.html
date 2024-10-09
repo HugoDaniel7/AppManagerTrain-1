@@ -1,0 +1,142 @@
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="menu-title">MENU</ion-title>
+      <ion-button id="close" (click)="closeMenu()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <button ion-button class="menu-button" (click)="navigateToComunidade()" type="button">
+      <img src="assets/icon/5-removebg-preview.png" class="icon">Comunidade
+    </button>
+    <button ion-button id="button" class="menu-button" (click)="navigateToMapa()" type="button">
+      <img src="assets/icon/4-removebg-preview.png" class="icon">Mapa
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToDicas()" type="button">
+      <img src="assets/icon/11-removebg-preview.png" class="icon">Dicas
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToSobreNos()" type="button">
+      <img src="assets/icon/12-removebg-preview.png" class="icon">Sobre Nós
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToPerfil()" type="button">
+      <img src="assets/icon/13-removebg-preview.png" class="icon">Perfil
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToSair()" type="button" id="Sair">
+      <img src="assets/icon/16-removebg-preview.png" class="icon">Sair
+    </button>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"></ion-content>
+</div>
+
+<!-- Conteúdo principal -->
+<ion-content id="main-content" [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar class="custom-toolbar">
+      <ion-title>
+        <div class="menu">
+          <ion-menu-toggle>
+            <button ion-button>
+             <h2>☰</h2>
+            </button>
+          </ion-menu-toggle>
+        </div>
+        <div class="image-container">
+          <img id="img1" src="assets/icon/2-removebg-preview.png">
+        </div>
+        <div class="login-icon">
+          <ion-avatar (click)="navigateToPerfil()">
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+          </ion-avatar>
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <H1 id="titulo" style="font-size: 30px;">Perfil</H1>
+    <ion-img src="assets/icon/13-removebg-preview.png" alt="Descrição da imagem" style="width: 150px; margin: 0 auto;"></ion-img>
+
+  </div>
+
+  
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="comunidade" (click)="navigateToComunidade()">
+        <img src="assets/icon/5-removebg-preview.png" class="icon1">
+      </ion-tab-button>
+      <ion-tab-button tab="mapa" (click)="navigateToMapa()">
+        <img src="assets/icon/4-removebg-preview.png" class="icon1">
+      </ion-tab-button>
+      <ion-tab-button tab="home" (click)="navigateToHome()">
+        <img src="assets/icon/10-removebg-preview.png" class="icon1">
+      </ion-tab-button>
+      <ion-tab-button tab="videos" (click)="navigateToDicas()">
+        <img src="assets/icon/11-removebg-preview.png" class="icon1">
+      </ion-tab-button>
+      <ion-tab-button tab="perfil" (click)="navigateToSobreNos()">
+        <img src="assets/icon/12-removebg-preview.png" class="icon1">
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+
+
+
+
+
+  <ion-card-content>
+    <!-- Formulário -->
+    <form style="margin-top: -10px;">
+
+      <ion-item class="custom-input">
+        <ion-input type="text" placeholder="Nome de usuário" maxlength="15" required style="margin-top: -10px;"></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-input">
+        <ion-input type="text" placeholder="E-mail" maxlength="15" required style="margin-top: -10px;"></ion-input>
+      </ion-item>
+  
+      <ion-item class="custom-input">
+        <ion-input type="text" placeholder="Data de nascimento" maxlength="15" required style="margin-top: -10px;"></ion-input>
+      </ion-item>
+
+      <div class="ion-text-center">
+        <ion-text>
+
+        </ion-text>
+      </div>
+
+    </form>
+
+    <p class="paragrafo-com-faixa">
+      <span class="faixa">REGISTRO DE SISTEMA</span>
+    </p>
+
+    <p style="font-family: Arial, sans-serif; font-size: 12px; color: black; margin-top: 60px; margin-left: 2px;">VERSÃO 1.0001.0158 49BAD5GFGF5R (PROD)</p>
+    <p style="font-family: Arial, sans-serif; font-size: 12px; color: rgb(1, 89, 151); margin-top: 10px; margin-left: 2px;">TERMO DE SERVIÇO</p>
+    <p style="font-family: Arial, sans-serif; font-size: 12px; color: rgb(1, 89, 151); margin-top: 10px; margin-left: 2px;">TERMO DE PRIVACIDADE</p>
+    <p style="font-family: Arial, sans-serif; font-size: 12px; color: rgb(1, 89, 151); margin-top: 10px; margin-left: 2px;">TERMO DE USO</p>
+
+
+  </ion-card-content>
+
+
+
+</ion-content>
+

@@ -1,0 +1,199 @@
+<!--Criação do menu-->
+<ion-menu side="start" contentId="main-content" id="menuId">
+  <ion-header>
+
+    <!--Topo do menu-->
+    <ion-toolbar>
+      <ion-title class="menu-title">MENU</ion-title>
+    </ion-toolbar>
+    <!--Fim do topo do menu-->
+
+  </ion-header>
+
+  <!--Criação dos buttons do menu-->
+  <ion-content class="ion-padding">
+    <button ion-button class="menu-button" (click)="navigateToComunidade()" type="button"><!--Criação dos button-->
+      <img src="assets/icon/5-removebg-preview.png" class="icon">Comunidade
+    </button>
+    <button ion-button id="button" class="menu-button" (click)="navigateToMapa()" type="button"><!--Criação dos button-->
+      <img src="assets/icon/4-removebg-preview.png" class="icon">Mapa<!--Colocando img e texto do button-->
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToDicas()" type="button"><!--Criação dos button-->
+      <img src="assets/icon/11-removebg-preview.png" class="icon">Dicas<!--Colocando img e texto do button-->
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToSobreNos()" type="button"><!--Criação dos button-->
+      <img src="assets/icon/12-removebg-preview.png" class="icon">Sobre Nós<!--Colocando img e texto do button-->
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToPerfil()" type="button"><!--Criação dos button-->
+      <img src="assets/icon/13-removebg-preview.png" class="icon">Perfil<!--Colocando img e texto do button-->
+    </button>
+    <button ion-button class="menu-button" (click)="navigateToSair()" type="button" id="Sair"><!--Criação dos button-->
+      <img src="assets/icon/16-removebg-preview.png" class="icon">Sair<!--Colocando img e texto do button-->
+    </button>
+  </ion-content>
+  <!--Fim da criação dos buttons do menu-->
+
+</ion-menu>
+<!--Fim do menu-->
+
+<!--Inicio do conteúdo principal-->
+
+<!--Inicio do header-->
+<ion-content id="main-content" [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar class="custom-toolbar">
+      <ion-title>
+
+        <!--Button para menu do header-->
+        <div class="menu">
+          <ion-menu-toggle>
+            <button ion-button>
+             <h2>☰</h2>
+            </button>
+          </ion-menu-toggle>
+        </div>
+        <!--Fim do button para menu do header-->
+
+        <!--Logo do header-->
+        <div class="image-container">
+          <img id="img1" src="assets/icon/2-removebg-preview.png">
+        </div>
+        <!--Fim da div da logo do header-->
+
+        <!--Button de avatar do header-->
+        <div class="login-icon">
+          <ion-avatar (click)="navigateToPerfil()">
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+          </ion-avatar>
+        </div>
+        <!--Fim button de avatar do header-->
+
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--Fim do header-->
+
+  <!--Inicio do container-->
+  <div id="container">
+
+    <H1 id="titulo">SOBRE NÓS</H1><!--Titulo-->
+
+    <H3 id="subtitulo">Desenvolvedores</H3><!--Sub titulo-->
+
+    <!--Criação da div com o card do programador-->
+    <div id="div1">
+
+      <!--Criação do card-->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Fabio Henrique Travanca Guimarães</ion-card-title>
+          <ion-card-subtitle>Programador</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Linkedin: Fabio Guimarães<br>
+          GitHub: FabioHTGuimaraes<br>
+          Instagram: dev_fabioguimaraes<br>
+        </ion-card-content>
+      </ion-card>
+      <!--Fim da criação do card-->
+
+    </div>
+    <!--Fim da criação da div com o card do programador-->
+
+    <!--Criação da div com o card do programador-->
+    <div id="div1">
+
+      <!--Criação do card-->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Hugo Daniel dos Santos Silva</ion-card-title>
+          <ion-card-subtitle>Programador</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Linkedin: Hugo Daniel dos Santos<br>
+          GitHub: HugoDaniel7<br>
+          Instagram: hugo_santozs7<br>
+        </ion-card-content>
+      </ion-card>
+      <!--Fim da criação do card-->
+
+    </div>
+    <!--Fim da criação da div com o card do programador-->
+
+    <H3 id="subtitulo">Professor responsável</H3><!--Sub titulo-->
+
+    <!--Criação da div com o card do professor-->
+    <div id="div1">
+
+      <!--Criação do card-->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Marcelo Vasconcelos Fatudo</ion-card-title>
+          <ion-card-subtitle>Professor</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Linkedin: Marcelo Fatudo<br>
+          GitHub: marcelofatudo<br>
+          Instagram: marcelofatudo<br>
+        </ion-card-content>
+      </ion-card>
+      <!--Fim da criação do card-->
+
+    </div>
+    <!--Fim da criação da div com o card do professor-->
+
+    <H3 id="subtitulo">Ficha técnica</H3><!--Sub titulo-->
+
+    <!--Criação da div com o card dos créditos-->
+    <div id="div1">
+
+      <!--Criação do card-->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Créditos</ion-card-title>
+          <ion-card-subtitle>Informações Técnicas sobre a Publicação</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content id="ioncard1">
+          © ManagerTrain, 2024 - Todos os direitos reservados<br>
+          Design gráfico: Hugo Daniel e Fabio Guimarães<br>
+          Revisão: Hugo Daniel e Fabio Guimarães<br>         
+          Organizador: Marcelo Fatudo<br>
+        </ion-card-content>
+      </ion-card>
+      <!--Fim da criação do card-->
+
+    </div>
+    <!--Fim da criação da div com o card dos créditos-->    
+
+  </div>
+  <!--Fim do container-->
+
+  <!--Criação do menu de baixo do app-->
+  <ion-footer>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="comunidade" (click)="navigateToComunidade()"><!--Criação dos button-->
+        <img src="assets/icon/5-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+      </ion-tab-button>
+      <ion-tab-button tab="mapa" (click)="navigateToMapa()"><!--Criação dos button-->
+        <img src="assets/icon/4-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+      </ion-tab-button>
+      <ion-tab-button tab="home" (click)="navigateToHome()"><!--Criação dos button-->
+        <img src="assets/icon/10-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+      </ion-tab-button>
+      <ion-tab-button tab="videos" (click)="navigateToDicas()"><!--Criação dos button-->
+        <img src="assets/icon/11-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+      </ion-tab-button>
+      <ion-tab-button tab="perfil" (click)="navigateToSobreNos()"><!--Criação dos button-->
+        <img src="assets/icon/12-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>
+  <!--Fim da criação do menu de baixo do app-->
+
+</ion-content>
+<!--Fim do conteúdo principal-->
+

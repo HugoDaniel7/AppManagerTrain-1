@@ -1,0 +1,50 @@
+  <!-- Cabeçalho da página -->
+<ion-header>
+
+</ion-header>
+
+<img src="assets/icon/1-removebg-preview.png" alt="Logo" class="logo-image">
+
+<ion-content class="ion-padding">
+  <div class="login-container" style="display: flex; justify-content: center; align-items: center; height: 85vh; margin-top: -130px;">
+    <ion-card>
+      <ion-card-header>
+        <!-- Títulos do cartão de login -->
+        <ion-card-subtitle style="text-align: center; margin-top: 20px;">Por favor, faça login para continuar</ion-card-subtitle>
+        <ion-card-title style="text-align: center;">Bem-vindo!</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <!-- Formulário de Login -->
+        <form>
+          <!-- Campo de entrada para o e-mail -->
+          <ion-item class="custom-input">
+            <ion-input type="text" placeholder="E-mail" maxlength="15" required style="margin-top: -10px;"></ion-input>
+          </ion-item>
+      
+          <!-- Campo de entrada para a senha -->
+          <ion-item class="custom-input">
+            <ion-input type="password" placeholder="Senha" maxlength="8" value="" style="margin-top: -10px;">
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+
+          <div class="ion-text-center">
+            <ion-text>
+              <!-- Links para recuperação de senha e cadastro -->
+              <button ion-button id="button1" (click)="navigateToEsqueciSenha()" type="button"><!--Criação dos button-->
+                <p>Esqueceu a senha?</p><!--texto do button-->
+              </button>
+              <button ion-button id="button1" (click)="navigateToCadastro()" type="button"><!--Criação dos button-->
+                <p>Cadastre-se</p><!--texto do button-->
+              </button>
+            </ion-text>
+          </div>
+          
+          <!-- Botão para entrar -->
+          <ion-button expand="full" type="submit" (click)="navigateToHome()">Entrar</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

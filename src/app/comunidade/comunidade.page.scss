@@ -1,0 +1,401 @@
+/* Define a fonte padrão, cor de fundo branca e texto preto para todos os elementos */
+* {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Remove margens e padding do body e ion-app, mantendo o fundo branco */
+body, ion-app {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove sublinhado de todos os links */
+a {
+  text-decoration: none;
+}
+
+/* Estiliza o container do ion-menu com bordas arredondadas e sombra */
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* Define fundo branco para o ion-header, ion-content e ion-footer */
+ion-header, ion-content, ion-footer {
+  background-color: #ffffff;
+}
+
+/* Define a posição relativa do cabeçalho */
+ion-header {
+  position: relative;
+}
+
+/* Define o tamanho da fonte do título principal */
+#titulo {
+  font-size: 50px;
+}
+
+/* Customiza a barra de ferramentas (toolbar) com altura, borda inferior e alinhamento de elementos */
+.custom-toolbar {
+  height: 50px;
+  border-bottom: 1px solid #ccc; 
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  justify-content: space-between;
+}
+
+/* Estilo do título do menu com margens, tamanho da fonte e cores */
+.menu-title {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: white; 
+  color: black;
+}
+
+/* Customiza a barra de ferramentas com fundo branco e posição relativa */
+ion-toolbar {
+  --background: white;
+  position: relative;
+}
+
+/* Define o título com flexbox para alinhar o conteúdo no centro, ocupar o espaço disponível e espaçamento interno */
+ion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1; 
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+} 
+
+/* Centraliza o conteúdo da imagem */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Define o tamanho da imagem dentro do container de imagem */
+.image-container img {
+  width: 80px; 
+  height: auto;
+}
+
+/* Estiliza o menu com posição absoluta e altura de 100% */
+.menu {
+  position: absolute;
+  left: 20px;
+  height: 100%;
+  margin-top: 5px;
+  align-items: center;
+}
+
+/* Botão do menu com cor preta, padding, sombra e posicionamento absoluto na parte inferior */
+#menu-button {
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 20px; 
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estiliza o menu de navegação com exibição em bloco e fundo branco */
+#menu-nav {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Remove o estilo de lista dos itens de navegação e define padding */
+#menu-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Define padding e borda inferior para os itens da lista */
+#menu-nav li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Estiliza os links dentro do menu com cor preta e negrito */
+#menu-nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;  
+  display: block;
+}
+
+/* Botão de menu com layout flexível e alinhamento do conteúdo à esquerda */
+.menu-button {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  margin-bottom: 10px; 
+  text-align: left;
+}
+
+/* Define o tamanho dos ícones dentro dos botões de menu */
+.menu-button .icon {
+  width: 30px;
+  height: auto;
+  margin-right: 10px; 
+}
+
+/* Define a largura do menu e o fundo branco */
+ion-menu {
+  --width: 250px;
+  --background: #ffffff;
+}
+
+/* Configurações de estilo para o conteúdo principal com fundo branco e padding inferior */
+ion-content {
+  --background: #ffffff;
+  --padding-bottom: 56px;
+}
+
+/* Estiliza a barra de abas (tab bar) fixa na parte inferior */
+ion-tab-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #ffffff;
+}
+
+/* Define o fundo branco para o rodapé */
+ion-footer {
+  --background: white;
+}
+
+/* Ícone de login com posição absoluta no canto superior direito */
+.login-icon {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  margin-top: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Define o tamanho da imagem do ícone de login */
+.login-icon img {
+  width: 40px;
+  height: auto;
+}
+
+/* Container centralizado com padding inferior */
+#container {
+  text-align: center;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 56px;
+  z-index: 5;
+}
+
+/* Estiliza o texto em negrito dentro do container */
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+/* Define estilo dos parágrafos dentro do container */
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+}
+
+/* Remove sublinhado dos links dentro do container */
+#container a {
+  text-decoration: none;
+}
+  
+/* Estilo do ícone com tamanho fixo */
+.icon1 {
+    width: 60px;
+    height: 60px; 
+    text-decoration: none;
+} 
+
+
+/* Container para as postagens */
+.post-container {
+  background-color: black; 
+  width: 300px; 
+  margin: 20px auto; 
+  text-align: left; 
+}
+
+/* Estilo para o nome de usuário */
+.username {
+  font-weight: bold; 
+  margin: 0; 
+}
+
+/* Estilo para a mensagem/postagem */
+.message {
+  margin: 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ion-content {
+    display: flex; /* Usando flexbox */
+    flex-direction: column; /* Coluna para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: flex-start; /* Alinha os itens no topo da página */
+    height: 100%; /* Garante que o conteúdo ocupe toda a altura disponível */
+}
+
+.fixed-section {
+    border: 1px solid black; /* Borda preta fina */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    margin: 0 auto; /* Remove a margem superior */
+    background-color: #fff; /* Fundo branco */
+    max-width: 600px; /* Largura máxima da seção */
+}
+
+
+.fixed-section ion-item {
+    --background: #fff; /* Fundo branco nos ion-items */
+    --border-color: #ccc; /* Borda cinza clara nos ion-items */
+    --border-width: 1px; /* Largura da borda */
+}
+
+.fixed-section ion-input,
+.fixed-section ion-textarea {
+    --padding-start: 10px; /* Espaçamento à esquerda */
+    --padding-end: 10px; /* Espaçamento à direita */
+}
+
+.fixed-section ion-button {
+    background-color: #007bff; /* Cor do botão */
+    color: #fff; /* Texto do botão em branco */
+}
+
+ion-list {
+    margin: 0; /* Remove margens ao redor da lista */
+}
+
+ion-item {
+    --background: #fff; /* Fundo branco para os itens */
+    --border-color: #464444; /* Cor da borda */
+    --border-width: 1px; /* Largura da borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaço entre as postagens */
+    padding: 10px; /* Espaçamento interno */
+}
+
+ion-label {
+    color: black; /* Cor do texto das postagens */
+}
+
+video {
+    width: 100%; /* Garantir que o vídeo ocupe a largura total do item */
+    border-radius: 8px; /* Bordas arredondadas para vídeos */
+}
+
+.media-preview {
+    margin-top: 10px; /* Espaço acima do preview */
+    display: flex; /* Usar flexbox para centralização */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.media-container {
+    text-align: center; /* Centraliza texto dentro da div */
+}
+
+.media-thumbnail {
+    max-width: 50%; /* Garante que a imagem ou vídeo não ultrapasse a largura do item */
+    height: auto; /* Mantém a proporção da imagem/vídeo */
+    border-radius: 80px; /* Bordas arredondadas */
+}
+
+  
+
+.fixed-fab {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 10;
+    transition: transform 0.3s ease;
+  }
+  
+  .fixed-fab ion-fab-button {
+    transition: transform 0.3s ease;
+  }
+  
+  .fixed-fab ion-fab-button.rotated {
+    transform: rotate(45deg); /* Rotaciona o botão ao ser clicado */
+  }
+  
+  /* Estilo inicial do formulário */
+  .fixed-section {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease, visibility 0.3s;
+  }
+  
+  /* Quando o formulário está visível */
+  .fixed-section.show {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px; /* Define um limite máximo para expandir */
+  }
+
+  
+
+  .mensagem-sem-posts {
+    text-align: center;
+    color: gray;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  
+  
+  
+  
+  
