@@ -91,10 +91,8 @@ ion-title {
 /* Estiliza o menu com posição absoluta e altura de 100% */
 .menu {
   position: absolute;
-  left: 20px;
-  height: 100%;
-  margin-top: 5px;
   align-items: center;
+  margin-top: 8px;
 }
 
 /* Botão do menu com cor preta, padding, sombra e posicionamento absoluto na parte inferior */
@@ -193,7 +191,7 @@ ion-footer {
   position: absolute;
   top: 0;
   right: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -203,6 +201,7 @@ ion-footer {
 .login-icon img {
   width: 40px;
   height: auto;
+  align-items: center;
 }
 
 /* Container centralizado com padding inferior */

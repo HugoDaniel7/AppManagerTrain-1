@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -20,42 +20,43 @@ export class ComunidadePage implements AfterViewInit {
 
   // Ciclo de vida para interagir com a DOM depois de renderizada
   ngAfterViewInit() {
-    if (this.menuButton && this.menuNav) {
-      this.menuButton.nativeElement.addEventListener('click', () => {
-        this.navigateToComunidade();
-      });
-    } else {
-      console.error('Erro ao carregar os elementos');
-    }
+    this.menuController.enable(true, 'menuId');
   }
 
   // Funções de navegação
   navigateToComunidade() {
     this.router.navigate(['/comunidade']);
+    this.menuController.close();
   }
 
   navigateToMapa() {
     this.router.navigate(['/mapalocal']);
+    this.menuController.close();
   }
 
   navigateToDicas() {
     this.router.navigate(['/dicas']);
+    this.menuController.close();
   }
 
   navigateToSobreNos() {
     this.router.navigate(['/sobrenos']);
+    this.menuController.close();
   }
 
   navigateToPerfil() {
     this.router.navigate(['/perfil']);
+    this.menuController.close();
   }
 
   navigateToSair() {
     this.router.navigate(['/login']);
+    this.menuController.close();
   }
 
   navigateToHome() {
     this.router.navigate(['/home']);
+    this.menuController.close();
   }
 
   closeMenu() {

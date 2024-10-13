@@ -1,197 +1,197 @@
-<!--Criação do menu lateral-->
-<ion-menu side="start" contentId="main-content" id="menuId">
-  <ion-header>
+<ion-app>
 
-    <!--Topo do menu-->
-    <ion-toolbar>
-      <!-- Título do menu -->
-      <ion-title class="menu-title">MENU</ion-title>
-    </ion-toolbar>
-    <!--Fim do topo do menu-->
+  <!--Criação do menu lateral-->
+  <ion-menu side="start" contentId="main-content" id="menuId">
+    <ion-header>
 
-  </ion-header>
+      <!--Topo do menu-->
+      <ion-toolbar>
+        <!-- Título do menu -->
+        <ion-title class="menu-title">MENU</ion-title>
+      </ion-toolbar>
+      <!--Fim do topo do menu-->
 
-  <!--Criação dos buttons do menu-->
-  <ion-content class="ion-padding">
-    <!-- Botão para navegar para a página de Comunidade -->
-    <button ion-button class="menu-button" (click)="navigateToComunidade()" type="button">
-      <!-- Imagem e texto do botão Comunidade -->
-      <img src="assets/icon/5-removebg-preview.png" class="icon">Comunidade
-    </button>
+    </ion-header>
 
-    <!-- Botão para navegar para a página de Mapa -->
-    <button ion-button id="button" class="menu-button" (click)="navigateToMapa()" type="button">
-      <!-- Imagem e texto do botão Mapa -->
-      <img src="assets/icon/4-removebg-preview.png" class="icon">Mapa
-    </button>
-
-    <!-- Botão para navegar para a página de Dicas -->
-    <button ion-button class="menu-button" (click)="navigateToDicas()" type="button">
-      <!-- Imagem e texto do botão Dicas -->
-      <img src="assets/icon/11-removebg-preview.png" class="icon">Dicas
-    </button>
-
-    <!-- Botão para navegar para a página Sobre Nós -->
-    <button ion-button class="menu-button" (click)="navigateToSobreNos()" type="button">
-      <!-- Imagem e texto do botão Sobre Nós -->
-      <img src="assets/icon/12-removebg-preview.png" class="icon">Sobre Nós
-    </button>
-
-    <!-- Botão para navegar para a página de Perfil -->
-    <button ion-button class="menu-button" (click)="navigateToPerfil()" type="button">
-      <!-- Imagem e texto do botão Perfil -->
-      <img src="assets/icon/13-removebg-preview.png" class="icon">Perfil
-    </button>
-
-    <!-- Botão para sair do app -->
-    <button ion-button class="menu-button" (click)="navigateToSair()" type="button" id="Sair">
-      <!-- Imagem e texto do botão Sair -->
-      <img src="assets/icon/16-removebg-preview.png" class="icon">Sair
-    </button>
-  </ion-content>
-  <!--Fim da criação dos buttons do menu-->
-
-</ion-menu>
-<!--Fim do menu lateral-->
-
-<!--Inicio do conteúdo principal-->
-<ion-content id="main-content" [fullscreen]="true">
-  <ion-header [translucent]="true">
-    <ion-toolbar class="custom-toolbar">
-      <ion-title>
-
-        <!--Button para abrir o menu no header-->
-        <div class="menu">
-          <ion-menu-toggle>
-            <button ion-button>
-              <!-- Símbolo ☰ que representa o ícone do menu -->
-              <h2>☰</h2>
-            </button>
-          </ion-menu-toggle>
-        </div>
-        <!--Fim do button para abrir o menu no header-->
-
-        <!--Logo do header-->
-        <div class="image-container">
-          <!-- Imagem da logo no header -->
-          <img id="img1" src="assets/icon/2-removebg-preview.png">
-        </div>
-        <!--Fim da div da logo do header-->
-
-        <!--Button de avatar do header-->
-        <div class="login-icon">
-          <!-- Clique no avatar leva para a página de perfil -->
-          <ion-avatar (click)="navigateToPerfil()">
-            <!-- Imagem padrão de avatar -->
-            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
-          </ion-avatar>
-        </div>
-        <!--Fim button de avatar do header-->
-
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <!--Fim do header-->
-
-  <!-- Título principal da página -->
-  <div id="container">
-    <H4 id="titulo" style="font-size: 35px;">COMUNIDADE</H4>
-  </div>
-
-  <!-- Conteúdo principal da página -->
-  <ion-content class="ion-padding">
-
-    <!-- Botão flutuante para mostrar/ocultar o formulário de postagem -->
-    <ion-fab class="fixed-fab" vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="toggleForm()" [class.rotated]="mostrarFormulario">
-        <!-- Ícone de adição no botão -->
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- Seção do formulário de postagem -->
-    <div class="fixed-section" [class.show]="mostrarFormulario">
-      <form (submit)="adicionarPost($event)">
-        <!-- Campo de entrada para o nome de usuário -->
-        <ion-item>
-          <ion-input type="text" [(ngModel)]="novoPost.usuario" name="usuario" placeholder="Nome de usuário" required></ion-input>
-        </ion-item>
-
-        <!-- Campo de texto para a postagem -->
-        <ion-item>
-          <ion-textarea [(ngModel)]="novoPost.texto" name="texto" placeholder="Escreva sua postagem aqui" required></ion-textarea>
-        </ion-item>
-
-        <!-- Campo para adicionar arquivos (imagens ou vídeos) -->
-        <ion-item>
-          <input type="file" placeholder="Adicione um arquivo" (change)="processarArquivo($event)" accept="image/*,video/*">
-        </ion-item>
-
-        <!-- Botão para submeter a postagem -->
-        <ion-button expand="full" type="submit">Adicionar Postagem</ion-button>
-      </form>
-    </div>
-
-    <!-- Mensagem quando não há postagens -->
-    <p *ngIf="posts.length === 0" class="mensagem-sem-posts">
-      Não há postagens no momento. Seja o primeiro a postar!
-    </p>
-
-    <!-- Lista de postagens -->
-    <ion-list>
-      <!-- Loop para exibir cada postagem -->
-      <ion-item *ngFor="let post of posts">
-        <ion-label>
-          <!-- Exibe o nome do usuário que postou -->
-          <h2>{{ post.usuario }}</h2>
-          <!-- Exibe o texto da postagem -->
-          <p>{{ post.texto }}</p>
-
-          <!-- Pré-visualização de mídias (imagem ou vídeo) -->
-          <div class="media-preview">
-            <!-- Exibe a imagem se o arquivo não for um vídeo -->
-            <ion-img *ngIf="post.arquivo && !isVideo(post.arquivo)" [src]="post.arquivo" class="media-thumbnail"></ion-img>
-            <!-- Exibe o vídeo se o arquivo for um vídeo -->
-            <video *ngIf="post.arquivo && isVideo(post.arquivo)" controls class="media-thumbnail">
-              <source [src]="post.arquivo" type="video/mp4">
-              Seu navegador não suporta o elemento de vídeo.
-            </video>
-          </div>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-
-  <!--Criação do menu de navegação na parte inferior-->
-  <ion-footer>
-    <ion-tab-bar slot="bottom">
+    <!--Criação dos buttons do menu-->
+    <ion-content class="ion-padding">
       <!-- Botão para navegar para a página de Comunidade -->
-      <ion-tab-button tab="comunidade" (click)="navigateToComunidade()">
-        <img src="assets/icon/5-removebg-preview.png" class="icon1">
-      </ion-tab-button>
+      <button ion-button class="menu-button" (click)="navigateToComunidade()" type="button">
+        <!-- Imagem e texto do botão Comunidade -->
+        <img src="assets/icon/5-removebg-preview.png" class="icon">Comunidade
+      </button>
 
       <!-- Botão para navegar para a página de Mapa -->
-      <ion-tab-button tab="mapa" (click)="navigateToMapa()">
-        <img src="assets/icon/4-removebg-preview.png" class="icon1">
-      </ion-tab-button>
-
-      <!-- Botão para navegar para a página Home -->
-      <ion-tab-button tab="home" (click)="navigateToHome()">
-        <img src="assets/icon/10-removebg-preview.png" class="icon1">
-      </ion-tab-button>
+      <button ion-button id="button" class="menu-button" (click)="navigateToMapa()" type="button">
+        <!-- Imagem e texto do botão Mapa -->
+        <img src="assets/icon/4-removebg-preview.png" class="icon">Mapa
+      </button>
 
       <!-- Botão para navegar para a página de Dicas -->
-      <ion-tab-button tab="videos" (click)="navigateToDicas()">
-        <img src="assets/icon/11-removebg-preview.png" class="icon1">
-      </ion-tab-button>
+      <button ion-button class="menu-button" (click)="navigateToDicas()" type="button">
+        <!-- Imagem e texto do botão Dicas -->
+        <img src="assets/icon/11-removebg-preview.png" class="icon">Dicas
+      </button>
 
       <!-- Botão para navegar para a página Sobre Nós -->
-      <ion-tab-button tab="perfil" (click)="navigateToSobreNos()">
-        <img src="assets/icon/12-removebg-preview.png" class="icon1">
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-footer>
-  <!--Fim da criação do menu de navegação inferior-->
+      <button ion-button class="menu-button" (click)="navigateToSobreNos()" type="button">
+        <!-- Imagem e texto do botão Sobre Nós -->
+        <img src="assets/icon/12-removebg-preview.png" class="icon">Sobre Nós
+      </button>
 
-</ion-content>
-<!--Fim do conteúdo principal-->
+      <!-- Botão para navegar para a página de Perfil -->
+      <button ion-button class="menu-button" (click)="navigateToPerfil()" type="button">
+        <!-- Imagem e texto do botão Perfil -->
+        <img src="assets/icon/13-removebg-preview.png" class="icon">Perfil
+      </button>
+
+      <!-- Botão para sair do app -->
+      <button ion-button class="menu-button" (click)="navigateToSair()" type="button" id="Sair">
+        <!-- Imagem e texto do botão Sair -->
+        <img src="assets/icon/16-removebg-preview.png" class="icon">Sair
+      </button>
+    </ion-content>
+    <!--Fim da criação dos buttons do menu-->
+
+  </ion-menu>
+  <!--Fim do menu lateral-->
+
+  <!--Inicio do conteúdo principal-->
+  <ion-content id="main-content" [fullscreen]="true">
+    <ion-header [translucent]="true">
+      <ion-toolbar class="custom-toolbar">
+        <ion-title>
+
+          <!--Button para abrir o menu no header-->
+          <div class="menu">
+            <ion-menu-toggle>
+              <button ion-button>
+                <!-- Símbolo ☰ que representa o ícone do menu -->
+                <h2>☰</h2>
+              </button>
+            </ion-menu-toggle>
+          </div>
+          <!--Fim do button para abrir o menu no header-->
+
+          <!--Logo do header-->
+          <div class="image-container">
+            <!-- Imagem da logo no header -->
+            <img id="img1" src="assets/icon/2-removebg-preview.png" (click)="navigateToHome()">
+          </div>
+          <!--Fim da div da logo do header-->
+
+          <!--Button de avatar do header-->
+          <div class="login-icon">
+            <!-- Clique no avatar leva para a página de perfil -->
+            <ion-avatar (click)="navigateToPerfil()">
+              <!-- Imagem padrão de avatar -->
+              <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+            </ion-avatar>
+          </div>
+          <!--Fim button de avatar do header-->
+
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <!--Fim do header-->
+
+    <!-- Título principal da página -->
+    <div id="container">
+      <H4 id="titulo" style="font-size: 35px;">COMUNIDADE</H4>
+
+    '<!-- Botão flutuante para mostrar/ocultar o formulário de postagem -->
+      <ion-fab class="fixed-fab" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="toggleForm()" [class.rotated]="mostrarFormulario">
+          <!-- Ícone de adição no botão -->
+          <ion-icon name="add" style="background-color: #007bff00;"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+      <!-- Seção do formulário de postagem -->
+      <div class="fixed-section" [class.show]="mostrarFormulario">
+        <form (submit)="adicionarPost($event)">
+          <!-- Campo de entrada para o nome de usuário -->
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="novoPost.usuario" name="usuario" placeholder="Nome de usuário" required></ion-input>
+          </ion-item>
+
+          <!-- Campo de texto para a postagem -->
+          <ion-item>
+            <ion-textarea [(ngModel)]="novoPost.texto" name="texto" placeholder="Escreva sua postagem aqui" required></ion-textarea>
+          </ion-item>
+
+          <!-- Campo para adicionar arquivos (imagens ou vídeos) -->
+          <ion-item>
+            <input type="file" placeholder="Adicione um arquivo" (change)="processarArquivo($event)" accept="image/*,video/*">
+          </ion-item>
+
+          <!-- Botão para submeter a postagem -->
+          <ion-button expand="full" type="submit">Adicionar Postagem</ion-button>
+        </form>
+      </div>
+
+      <!-- Mensagem quando não há postagens -->
+      <p *ngIf="posts.length === 0" class="mensagem-sem-posts">
+        Não há postagens no momento. Seja o primeiro a postar!
+      </p>
+
+      <!-- Lista de postagens -->
+      <ion-list>
+        <!-- Loop para exibir cada postagem -->
+        <ion-item *ngFor="let post of posts">
+          <ion-label>
+            <!-- Exibe o nome do usuário que postou -->
+            <h2>{{ post.usuario }}</h2>
+            <!-- Exibe o texto da postagem -->
+            <p>{{ post.texto }}</p>
+
+            <!-- Pré-visualização de mídias (imagem ou vídeo) -->
+            <div class="media-preview">
+              <!-- Exibe a imagem se o arquivo não for um vídeo -->
+              <ion-img *ngIf="post.arquivo && !isVideo(post.arquivo)" [src]="post.arquivo" class="media-thumbnail"></ion-img>
+              <!-- Exibe o vídeo se o arquivo for um vídeo -->
+              <video *ngIf="post.arquivo && isVideo(post.arquivo)" controls class="media-thumbnail">
+                <source [src]="post.arquivo" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!--Criação do menu de navegação na parte inferior-->
+    <ion-footer>
+      <ion-tab-bar slot="bottom">
+        <!-- Botão para navegar para a página de Comunidade -->
+        <ion-tab-button tab="comunidade" (click)="navigateToComunidade()">
+          <img src="assets/icon/5-removebg-preview.png" class="icon1">
+        </ion-tab-button>
+
+        <!-- Botão para navegar para a página de Mapa -->
+        <ion-tab-button tab="mapa" (click)="navigateToMapa()">
+          <img src="assets/icon/4-removebg-preview.png" class="icon1">
+        </ion-tab-button>
+
+        <!-- Botão para navegar para a página Home -->
+        <ion-tab-button tab="home" (click)="navigateToHome()">
+          <img src="assets/icon/10-removebg-preview.png" class="icon1">
+        </ion-tab-button>
+
+        <!-- Botão para navegar para a página de Dicas -->
+        <ion-tab-button tab="videos" (click)="navigateToDicas()">
+          <img src="assets/icon/11-removebg-preview.png" class="icon1">
+        </ion-tab-button>
+
+        <!-- Botão para navegar para a página Sobre Nós -->
+        <ion-tab-button tab="perfil" (click)="navigateToSobreNos()">
+          <img src="assets/icon/12-removebg-preview.png" class="icon1">
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-footer>
+    <!--Fim da criação do menu de navegação inferior-->
+
+  </ion-content>
+  <!--Fim do conteúdo principal-->
+
+</ion-app>

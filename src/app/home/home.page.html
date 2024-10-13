@@ -1,124 +1,128 @@
-<!--Criação do menu-->
-<ion-menu side="start" contentId="main-content" id="menuId">
-  <ion-header>
+<ion-app>
 
-    <!--Topo do menu-->
-    <ion-toolbar>
-      <ion-title class="menu-title">MENU</ion-title>
-    </ion-toolbar>
-    <!--Fim do topo do menu-->
+  <!--Criação do menu-->
+  <ion-menu side="start" contentId="main-content" id="menuId">
+    <ion-header>
 
-  </ion-header>
+      <!--Topo do menu-->
+      <ion-toolbar>
+        <ion-title class="menu-title">MENU</ion-title>
+      </ion-toolbar>
+      <!--Fim do topo do menu-->
 
-  <!--Criação dos buttons do menu-->
-  <ion-content class="ion-padding">
-    <button ion-button class="menu-button" (click)="navigateToComunidade()" type="button"><!--Criação dos button-->
-      <img src="assets/icon/5-removebg-preview.png" class="icon">Comunidade
-    </button>
-    <button ion-button id="button" class="menu-button" (click)="navigateToMapa()" type="button"><!--Criação dos button-->
-      <img src="assets/icon/4-removebg-preview.png" class="icon">Mapa<!--Colocando img e texto do button-->
-    </button>
-    <button ion-button class="menu-button" (click)="navigateToDicas()" type="button"><!--Criação dos button-->
-      <img src="assets/icon/11-removebg-preview.png" class="icon">Dicas<!--Colocando img e texto do button-->
-    </button>
-    <button ion-button class="menu-button" (click)="navigateToSobreNos()" type="button"><!--Criação dos button-->
-      <img src="assets/icon/12-removebg-preview.png" class="icon">Sobre Nós<!--Colocando img e texto do button-->
-    </button>
-    <button ion-button class="menu-button" (click)="navigateToPerfil()" type="button"><!--Criação dos button-->
-      <img src="assets/icon/13-removebg-preview.png" class="icon">Perfil<!--Colocando img e texto do button-->
-    </button>
-    <button ion-button class="menu-button" (click)="navigateToSair()" type="button" id="Sair"><!--Criação dos button-->
-      <img src="assets/icon/16-removebg-preview.png" class="icon">Sair<!--Colocando img e texto do button-->
-    </button>
-  </ion-content>
-  <!--Fim da criação dos buttons do menu-->
+    </ion-header>
 
-</ion-menu>
-<!--Fim do menu-->
+    <!--Criação dos buttons do menu-->
+    <ion-content class="ion-padding">
+      <button ion-button class="menu-button" (click)="navigateToComunidade()" type="button"><!--Criação dos button-->
+        <img src="assets/icon/5-removebg-preview.png" class="icon">Comunidade<!--Colocando img e texto do button-->
+      </button>
+      <button ion-button class="menu-button" (click)="navigateToMapa()" type="button"><!--Criação dos button-->
+        <img src="assets/icon/4-removebg-preview.png" class="icon">Mapa<!--Colocando img e texto do button-->
+      </button>
+      <button ion-button class="menu-button" (click)="navigateToDicas()" type="button"><!--Criação dos button-->
+        <img src="assets/icon/11-removebg-preview.png" class="icon">Dicas<!--Colocando img e texto do button-->
+      </button>
+      <button ion-button class="menu-button" (click)="navigateToSobreNos()" type="button"><!--Criação dos button-->
+        <img src="assets/icon/12-removebg-preview.png" class="icon">Sobre Nós<!--Colocando img e texto do button-->
+      </button>
+      <button ion-button class="menu-button" (click)="navigateToPerfil()" type="button"><!--Criação dos button-->
+        <img src="assets/icon/13-removebg-preview.png" class="icon">Perfil<!--Colocando img e texto do button-->
+      </button>
+      <button ion-button class="menu-button" (click)="navigateToSair()" type="button" id="Sair"><!--Criação dos button-->
+        <img src="assets/icon/16-removebg-preview.png" class="icon">Sair<!--Colocando img e texto do button-->
+      </button>
+    </ion-content>
+    <!--Fim da criação dos buttons do menu-->
 
-<!--Inicio do conteúdo principal-->
+  </ion-menu>
+  <!--Fim do menu-->
 
-<!--Inicio do header-->
-<ion-content id="main-content" [fullscreen]="true">
-  <ion-header [translucent]="true">
-    <ion-toolbar class="custom-toolbar">
-      <ion-title>
+  <!--Inicio do conteúdo principal-->
 
-        <!--Button para menu do header-->
-        <div class="menu">
-          <ion-menu-toggle>
-            <button ion-button>
-             <h2>☰</h2>
-            </button>
-          </ion-menu-toggle>
+  <!--Inicio do header-->
+  <ion-content id="main-content" [fullscreen]="true">
+    <ion-header [translucent]="true">
+      <ion-toolbar class="custom-toolbar">
+        <ion-title>
+
+          <!--Button para menu do header-->
+          <div class="menu">
+            <ion-menu-toggle>
+              <button ion-button>
+              <h2>☰</h2>
+              </button>
+            </ion-menu-toggle>
+          </div>
+          <!--Fim do button para menu do header-->
+
+          <!--Logo do header-->
+          <div class="image-container">
+            <img id="img1" src="assets/icon/2-removebg-preview.png" (click)="navigateToHome()">
+          </div>
+          <!--Fim da div da logo do header-->
+
+          <!--Button de avatar do header-->
+          <div class="login-icon">
+            <ion-avatar (click)="navigateToPerfil()">
+              <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+            </ion-avatar>
+          </div>
+          <!--Fim button de avatar do header-->
+          
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <!--Fim do header-->
+
+    <!--Inicio do container-->
+    <div id="container">
+
+      <H1 id="titulo">BEM-VINDO AO MANAGERTRAIN</H1><!--Titulo-->
+
+      <H3 id="subtitulo">Aqui você encontra tudo o que precisa para transformar sua jornada fitness</H3><!--Sub titulo-->
+
+      <!--Criação da div da imagem central-->
+      <div id="Dicas1">
+        <div id="Dicas30">
+            <img id="imgprin" src="assets/icon/Papel de parede com versículo bíblico aquarela delicado rosa.png"><!--Img central-->
         </div>
-        <!--Fim do button para menu do header-->
+      </div><br>
+      <!--Fim da div da imagem central-->
 
-        <!--Logo do header-->
-        <div class="image-container">
-          <img id="img1" src="assets/icon/2-removebg-preview.png">
-        </div>
-        <!--Fim da div da logo do header-->
-
-        <!--Button de avatar do header-->
-        <div class="login-icon">
-          <ion-avatar (click)="navigateToPerfil()">
-            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
-          </ion-avatar>
-        </div>
-        <!--Fim button de avatar do header-->
-        
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <!--Fim do header-->
-
-  <!--Inicio do container-->
-  <div id="container">
-
-    <H1 id="titulo">BEM-VINDO AO MANAGERTRAIN</H1><!--Titulo-->
-
-    <H3 id="subtitulo">Aqui você encontra tudo o que precisa para transformar sua jornada fitness</H3><!--Sub titulo-->
-
-    <!--Criação da div da imagem central-->
-    <div id="Dicas1">
+      <!--Criação da div que apresenta a data do dia-->
       <div id="Dicas30">
-          <img id="imgprin" src="assets/icon/Papel de parede com versículo bíblico aquarela delicado rosa.png"><!--Img central-->
+        <H3 id="subtitulo">Vamos começar o dia de treinos e cuidados com a saúde, hoje é dia:</H3><!--Sub titulo-->
+        <H2>{{ dataAtual }}</H2><!--Função de data-->
       </div>
-    </div><br>
-    <!--Fim da div da imagem central-->
+      <!--Fim da div que apresenta a data do dia-->
 
-    <!--Criação da div que apresenta a data do dia-->
-    <div id="Dicas30">
-      <H3 id="subtitulo">Vamos começar o dia de treinos e cuidados com a saúde, hoje é dia:</H3><!--Sub titulo-->
-      <H2>{{ dataAtual }}</H2><!--Função de data-->
     </div>
-    <!--Fim da div que apresenta a data do dia-->
+    <!--Fim do container-->
 
-  </div>
-  <!--Fim do container-->
+    <!--Criação do menu de baixo do app-->
+    <ion-footer>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="comunidade" (click)="navigateToComunidade()"><!--Criação dos button-->
+          <img src="assets/icon/5-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+        </ion-tab-button>
+        <ion-tab-button tab="mapa" (click)="navigateToMapa()"><!--Criação dos button-->
+          <img src="assets/icon/4-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+        </ion-tab-button>
+        <ion-tab-button tab="home" (click)="navigateToHome()"><!--Criação dos button-->
+          <img src="assets/icon/10-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+        </ion-tab-button>
+        <ion-tab-button tab="videos" (click)="navigateToDicas()"><!--Criação dos button-->
+          <img src="assets/icon/11-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+        </ion-tab-button>
+        <ion-tab-button tab="perfil" (click)="navigateToSobreNos()"><!--Criação dos button-->
+          <img src="assets/icon/12-removebg-preview.png" class="icon1"><!--Colocando img do button-->
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-footer>
+    <!--Fim da criação do menu de baixo do app-->
 
-  <!--Criação do menu de baixo do app-->
-  <ion-footer>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="comunidade" (click)="navigateToComunidade()"><!--Criação dos button-->
-        <img src="assets/icon/5-removebg-preview.png" class="icon1"><!--Colocando img do button-->
-      </ion-tab-button>
-      <ion-tab-button tab="mapa" (click)="navigateToMapa()"><!--Criação dos button-->
-        <img src="assets/icon/4-removebg-preview.png" class="icon1"><!--Colocando img do button-->
-      </ion-tab-button>
-      <ion-tab-button tab="home" (click)="navigateToHome()"><!--Criação dos button-->
-        <img src="assets/icon/10-removebg-preview.png" class="icon1"><!--Colocando img do button-->
-      </ion-tab-button>
-      <ion-tab-button tab="videos" (click)="navigateToDicas()"><!--Criação dos button-->
-        <img src="assets/icon/11-removebg-preview.png" class="icon1"><!--Colocando img do button-->
-      </ion-tab-button>
-      <ion-tab-button tab="perfil" (click)="navigateToSobreNos()"><!--Criação dos button-->
-        <img src="assets/icon/12-removebg-preview.png" class="icon1"><!--Colocando img do button-->
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-footer>
-  <!--Fim da criação do menu de baixo do app-->
+  </ion-content>
+  <!--Fim do conteúdo principal-->
 
-</ion-content>
-<!--Fim do conteúdo principal-->
+</ion-app>

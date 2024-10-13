@@ -54,7 +54,7 @@
           </ion-menu-toggle>
         </div>
         <div class="image-container">
-          <img id="img1" src="assets/icon/2-removebg-preview.png">
+          <img id="img1" src="assets/icon/2-removebg-preview.png" (click)="navigateToHome()">
         </div>
         <div class="login-icon">
           <ion-avatar (click)="navigateToPerfil()">
@@ -64,13 +64,6 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-
-    <H1 id="titulo" style="font-size: 30px;">Perfil</H1>
-    <ion-img src="assets/icon/13-removebg-preview.png" alt="Descrição da imagem" style="width: 150px; margin: 0 auto;"></ion-img>
-
-  </div>
 
   
 
@@ -97,6 +90,24 @@
 
 
 
+  <div id="container">
+    <H1 id="titulo" style="font-size: 30px;">Perfil</H1>
+
+    <!-- Contêiner para a imagem com estilo redondo -->
+    <div style="display: inline-block; margin-bottom: 20px; border: 5px solid #000; border-radius: 50%;">
+
+      <ion-avatar style="width: 150px; height: 150px;">
+        <img 
+        alt="Silhouette of a person's head" 
+        [src]="selectedImage ? selectedImage : 'https://ionicframework.com/docs/img/demos/avatar.svg'" 
+        (click)="triggerFileInput()"
+        style="width: 100%; height: 100%; object-fit: cover;">
+      </ion-avatar>
+    </div>
+
+     <!-- Campo de input escondido -->
+     <input id="file-input" type="file" accept="image/*" #fileInput (change)="onFileSelected($event)" style="display: none;">
+  </div>
 
 
 

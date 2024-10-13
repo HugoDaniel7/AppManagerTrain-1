@@ -36,36 +36,43 @@ export class HomePage implements AfterViewInit {
   // Função para redirecionar para a página da comunidade
   navigateToComunidade() {
     this.router.navigate(['/comunidade']);
+    this.menuController.close();
   }
 
   // Função para redirecionar para a página da mapa
   navigateToMapa() {
     this.router.navigate(['/mapalocal']);
+    this.menuController.close();
   }
 
   // Função para redirecionar para a página da dicas
   navigateToDicas() {
     this.router.navigate(['/dicas']);
+    this.menuController.close();
   }
 
    // Função para redirecionar para a página da Sobre Nós
    navigateToSobreNos() {
     this.router.navigate(['/sobrenos']);
+    this.menuController.close();
   }
   
    // Função para redirecionar para a página da perfil
    navigateToPerfil() {
     this.router.navigate(['/perfil']);
+    this.menuController.close();
   } 
 
    // Função para redirecionar para a página da login
    navigateToSair() {
     this.router.navigate(['/login']);
+    this.menuController.close();
   } 
 
    // Função para redirecionar para a página da home
    navigateToHome() {
     this.router.navigate(['/home']);
+    this.menuController.close();
   } 
 
   // Função para fechar o menu

@@ -9,9 +9,14 @@ import { Router } from '@angular/router'; // Importação do Router
 })
 export class PerfilPage implements AfterViewInit {
 
+  selectedImage: string | ArrayBuffer | null = null;
+
   // Referência ao botão e ao menu usando ViewChild
   @ViewChild('menuButton', { static: false }) menuButton!: ElementRef;
   @ViewChild('menuNav', { static: false }) menuNav!: ElementRef;
+
+  // Referenciando o input do tipo file com o ViewChild
+  @ViewChild('fileInput', { static: false }) fileInput!: ElementRef;
 
   constructor(private menuController: MenuController, private router: Router) {}
 
@@ -25,6 +30,31 @@ export class PerfilPage implements AfterViewInit {
       });
     } else {
       console.error('Erro ao carregar os elementos');
+    }
+  }
+
+// Função para disparar o clique no input de arquivo
+  triggerFileInput() {
+    if (this.fileInput) {
+      this.fileInput.nativeElement.click();  // Dispara o clique no input de arquivo
+    } else {
+      console.error('Elemento fileInput não encontrado');
+    }
+  }
+
+  // Função para tratar a seleção da imagem
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      
+      // Quando o arquivo estiver pronto, atribua o resultado ao selectedImage
+      reader.onload = () => {
+        this.selectedImage = reader.result;  // reader.result é o conteúdo da imagem em base64
+      };
+      
+      // Leia o arquivo como DataURL (base64)
+      reader.readAsDataURL(input.files[0]);
     }
   }
 

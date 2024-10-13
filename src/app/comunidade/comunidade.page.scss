@@ -91,9 +91,7 @@ ion-title {
 /* Estiliza o menu com posição absoluta e altura de 100% */
 .menu {
   position: absolute;
-  left: 20px;
-  height: 100%;
-  margin-top: 5px;
+  margin-top: 8px;
   align-items: center;
 }
 
@@ -193,7 +191,7 @@ ion-footer {
   position: absolute;
   top: 0;
   right: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   height: 100%;
   display: flex;
   align-items: center;
