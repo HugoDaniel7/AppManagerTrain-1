@@ -19,20 +19,20 @@
 
       <ion-card-content>
         <!-- Formulário de cadastro -->
-        <form>
           <!-- Campo de entrada para Nome Completo -->
           <ion-item class="custom-input">
-            <ion-input type="text" placeholder="Nome Completo" maxlength="50" required style="margin-top: -10px;"></ion-input>
+            <ion-input [(ngModel)]="name" type="text" placeholder="Nome Completo" maxlength="50" required style="margin-top: -10px;"></ion-input>
           </ion-item>
 
           <!-- Campo de entrada para E-mail -->
           <ion-item class="custom-input">
-            <ion-input type="text" placeholder="E-mail" maxlength="40" required style="margin-top: -10px;"></ion-input>
+            <ion-input [(ngModel)]="email" type="text" placeholder="E-mail" maxlength="40" required style="margin-top: -10px;"></ion-input>
           </ion-item>
 
           <!-- Campo de entrada para CPF com máscara customizada (apenas números, com formatação de CPF) -->
           <ion-item class="custom-input">
             <ion-input
+            [(ngModel)]="cpf"
               type="text"
               placeholder="CPF"
               maxlength="14"
@@ -45,26 +45,19 @@
 
           <!-- Campo de entrada para Senha -->
           <ion-item class="custom-input">
-            <ion-input type="password" placeholder="Senha" maxlength="8" value="" style="margin-top: -10px;">
+            <ion-input [(ngModel)]="password" type="password" placeholder="Senha" maxlength="8" value="" style="margin-top: -10px;">
               <!-- Componente para alternar a visibilidade da senha -->
               <ion-input-password-toggle slot="end"></ion-input-password-toggle>
             </ion-input>
           </ion-item>
 
-          <!-- Campo de entrada para Confirmar Senha -->
-          <ion-item class="custom-input">
-            <ion-input type="password" placeholder="Confirmar Senha" maxlength="8" value="" style="margin-top: -10px;">
-              <!-- Componente para alternar a visibilidade da senha -->
-              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-            </ion-input>
-          </ion-item>
+
 
           <!-- Div para exibir mensagem de erro se as senhas não coincidirem -->
           <div id="mensagemErro" style="color: red; display: none; margin-top: 10px;">As senhas não coincidem.</div>
 
           <!-- Botão centralizado para realizar o cadastro -->
-          <ion-button expand="full" type="submit" style="margin-top: 30px;" (click)="navigateToLogin()">CADASTRAR</ion-button>
-        </form>
+          <ion-button expand="full" type="submit" style="margin-top: 30px;" (click)="register()">CADASTRAR</ion-button>
       </ion-card-content>
     </ion-card>
   </div>

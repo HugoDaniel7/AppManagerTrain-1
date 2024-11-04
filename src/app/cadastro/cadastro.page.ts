@@ -1,5 +1,10 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router'; // Importação do Router
+import { AuthService } from 'src/app/services/auth.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Pessoa } from '../models/pessoa';
+import { PessoaService } from '../services/pessoa.service';
+
 
 
 @Component({
@@ -8,12 +13,30 @@ import { Router } from '@angular/router'; // Importação do Router
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage implements AfterViewInit {
+  
+  // Propriedades para login
+  email: string = '';
+  password: string = '';
+  name: string = '';
+  cpf: any = '';
+
+  signupFullName: string = '';
+  signupCpf: string = '';
+  signupEmail: string = '';
+  signupPhone: string = '';
+  signupPassword: string = '';
 
  // Referência ao botão e ao menu usando ViewChild
  @ViewChild('menuButton', { static: false }) menuButton!: ElementRef;
  @ViewChild('menuNav', { static: false }) menuNav!: ElementRef;
 
- constructor(private router: Router) {}
+
+ constructor(
+  private router: Router, 
+  private authService: AuthService, 
+  private firestore: AngularFirestore, 
+  private pessoaService: PessoaService
+) {}
 
  ngAfterViewInit() {
   // Verifica se os elementos foram carregados corretamente
@@ -42,7 +65,19 @@ export class CadastroPage implements AfterViewInit {
   navigateToHome() {
     this.router.navigate(['/home']);
   } 
+
+
+  register() {
+    // Lógica para processar o cadastro
+    this.authService.registrarUsuario(this.email, this.password, this.name, this.cpf);
+    console.log('Cadastro enviado com sucesso!', {
+    
+    });}
 }
+
+
+
+
 
 
 
@@ -58,5 +93,7 @@ export class Cadastropage {
       console.log('Formulário inválido');
     }
   }
+
+
 }
 

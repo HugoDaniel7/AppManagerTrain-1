@@ -1,5 +1,6 @@
-  <!-- Cabeçalho da página -->
+<!-- Cabeçalho da página -->
 <ion-header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </ion-header>
 
@@ -16,23 +17,24 @@
       
       <ion-card-content>
         <!-- Formulário de Login -->
-        <form>
           <!-- Campo de entrada para o e-mail -->
           <ion-item class="custom-input">
-            <ion-input type="text" placeholder="E-mail" maxlength="15" required style="margin-top: -10px;"></ion-input>
+            <ion-input [(ngModel)] = "email" type="text" placeholder="E-mail" maxlength="50" required style="margin-top: -10px;"></ion-input>
           </ion-item>
       
           <!-- Campo de entrada para a senha -->
           <ion-item class="custom-input">
-            <ion-input type="password" placeholder="Senha" maxlength="8" value="" style="margin-top: -10px;">
+            <ion-input [(ngModel)] = "password" type="password" placeholder="Senha" maxlength="20" style="margin-top: -10px;">
               <ion-input-password-toggle slot="end"></ion-input-password-toggle>
             </ion-input>
           </ion-item>
 
+
+
           <div class="ion-text-center">
             <ion-text>
               <!-- Links para recuperação de senha e cadastro -->
-              <button ion-button id="button1" (click)="navigateToEsqueciSenha()" type="button"><!--Criação dos button-->
+              <button ion-button id="button1" (click)="navigateToEsqueciSenha()" type="button" onclick="recoverPassword()"><!--Criação dos button-->
                 <p>Esqueceu a senha?</p><!--texto do button-->
               </button>
               <button ion-button id="button1" (click)="navigateToCadastro()" type="button"><!--Criação dos button-->
@@ -42,8 +44,15 @@
           </div>
           
           <!-- Botão para entrar -->
-          <ion-button expand="full" type="submit" (click)="navigateToHome()">Entrar</ion-button>
-        </form>
+          <ion-button expand="full" type="submit" (click)="submitLogin()">Entrar</ion-button>
+
+          <ion-button class="google-login-btn" (click)="googleLogin()" style="background-color: whitesmoke;">
+            <img src="assets/icon/icon-google.png" alt="Google logo" class="google-logo">
+            Login with Google
+          </ion-button>          
+
+          
+
       </ion-card-content>
     </ion-card>
   </div>

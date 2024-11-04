@@ -1,0 +1,42 @@
+// Estilo para centralizar a logo
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    max-width: 150px;
+    height: auto;
+  }
+  
+  // Estilo adicional para a página
+  ion-content {
+    --background: #ffffff; /* Cor de fundo da página */
+  }
+  
+  h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #015997; /* Cor do título */
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px;
+  }
+  
+
+  ion-header {
+    --background: #ffffff; /* Define o fundo do ion-header como branco */
+  }
+  
+  ion-toolbar {
+    --background: #ffffff; /* Define o fundo do ion-toolbar como branco */
+    color: #000; /* Define a cor do texto como preto para melhor legibilidade */
+  }
+  

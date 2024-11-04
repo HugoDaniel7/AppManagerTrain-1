@@ -1,6 +1,9 @@
 import { Component, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { SessaoService } from '../services/sessao.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 
 @Component({
   selector: 'app-comunidade',
@@ -15,8 +18,21 @@ export class ComunidadePage implements AfterViewInit {
   novoPost: any = { usuario: '', texto: '', arquivo: null }; // Inicializando novoPost
   posts: any[] = []; // Array para armazenar as postagens
   mostrarFormulario: boolean = false; // Controla a exibição do formulário
+  usuarioLogado: any;
 
-  constructor(private menuController: MenuController, private router: Router) {}
+  constructor(
+    private menuController: MenuController, 
+    private router: Router, 
+    private afAuth: AngularFireAuth, 
+    private sessaoService: SessaoService
+  ) {}
+
+  ngOnInit(): void {
+    // Inscreve-se no BehaviorSubject para obter os dados do usuário
+    this.sessaoService.usuarioLogado$.subscribe(usuarioData => {
+      this.usuarioLogado = usuarioData;
+    });
+  }
 
   // Ciclo de vida para interagir com a DOM depois de renderizada
   ngAfterViewInit() {
@@ -69,32 +85,34 @@ export class ComunidadePage implements AfterViewInit {
   }
 
   // Função para adicionar a nova postagem
-  adicionarPost(event: Event) {
-    event.preventDefault();
+  // Função para adicionar a nova postagem
+adicionarPost(event: Event) {
+  event.preventDefault();
 
-    // Adiciona o novo post na lista se os campos obrigatórios estiverem preenchidos
-    if (this.novoPost.usuario && this.novoPost.texto) {
-      const novoPostagem = {
-        usuario: this.novoPost.usuario,
-        texto: this.novoPost.texto,
-        arquivo: this.novoPost.arquivo,
-      };
+  // Adiciona o novo post na lista se o texto estiver preenchido
+  if (this.novoPost.texto) {
+    const novoPostagem = {
+      usuario: this.usuarioLogado.name || 'Usuário Anônimo', // Use o nome do usuário logado
+      texto: this.novoPost.texto,
+      arquivo: this.novoPost.arquivo,
+    };
 
-      console.log("Lista de postagens:", this.posts);
-      console.log("Nova postagem:", novoPostagem); // Verifica os dados da nova postagem
-      
-      this.posts.push(novoPostagem);
-      console.log("Postagens:", this.posts); // Para verificar as postagens
+    console.log("Lista de postagens:", this.posts);
+    console.log("Nova postagem:", novoPostagem); // Verifica os dados da nova postagem
+    
+    this.posts.push(novoPostagem);
+    console.log("Postagens:", this.posts); // Para verificar as postagens
 
-      // Limpa o formulário
-      this.novoPost = { usuario: '', texto: '', arquivo: null };
+    // Limpa o formulário
+    this.novoPost = { texto: '', arquivo: null };
 
-      // Fecha o formulário após adicionar a postagem
-      this.toggleForm();
-    } else {
-      console.error("Usuário e texto são obrigatórios!"); // Mensagem de erro se campos não preenchidos
-    }
+    // Fecha o formulário após adicionar a postagem
+    this.toggleForm();
+  } else {
+    console.error("Texto é obrigatório!"); // Mensagem de erro se campo não preenchido
   }
+}
+
 
   // Processa o arquivo de imagem/vídeo
   processarArquivo(event: any) {

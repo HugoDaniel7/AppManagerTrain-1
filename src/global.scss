@@ -41,3 +41,31 @@
     background-color: #ffffff;
     color: black;
   }
+
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+  .custom-toast {
+    --width: 200px; /* Define a largura do toast */
+    --min-width: 200px; /* Define a largura mínima */
+    --max-width: 200px; /* Define a largura máxima */
+    --border-radius: 12px; /* Bordas arredondadas */
+    --background: #85aaee; /* Cor de fundo */
+    --color: #000000; /* Cor do texto */
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para o quadrado */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Espaçamento interno */
+    animation: pulse 1.5s infinite; /* Aplica a animação de pulsação */
+  }
+  

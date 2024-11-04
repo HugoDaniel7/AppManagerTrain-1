@@ -4,6 +4,10 @@
   <ion-menu side="start" contentId="main-content" id="menuId">
     <ion-header>
 
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
       <!--Topo do menu-->
       <ion-toolbar>
         <!-- Título do menu -->
@@ -97,9 +101,9 @@
 
     <!-- Título principal da página -->
     <div id="container">
-      <H4 id="titulo" style="font-size: 35px;">COMUNIDADE</H4>
+      <H4 id="titulo" style="font-size: 35px; font-family: Playfair Display, serif;"><em>COMUNIDADE</em></H4>
 
-    '<!-- Botão flutuante para mostrar/ocultar o formulário de postagem -->
+    <!-- Botão flutuante para mostrar/ocultar o formulário de postagem -->
       <ion-fab class="fixed-fab" vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="toggleForm()" [class.rotated]="mostrarFormulario">
           <!-- Ícone de adição no botão -->
@@ -112,7 +116,7 @@
         <form (submit)="adicionarPost($event)">
           <!-- Campo de entrada para o nome de usuário -->
           <ion-item>
-            <ion-input type="text" [(ngModel)]="novoPost.usuario" name="usuario" placeholder="Nome de usuário" required></ion-input>
+            <span id="name">{{ usuarioLogado.name }}</span>
           </ion-item>
 
           <!-- Campo de texto para a postagem -->

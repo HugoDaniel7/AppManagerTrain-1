@@ -43,6 +43,18 @@ const routes: Routes = [
     path: 'esquecisenha',
     loadChildren: () => import('./esquecisenha/esquecisenha.module').then( m => m.EsquecisenhaPageModule)
   },
+  {
+    path: 'termos-de-servico',
+    loadChildren: () => import('./termos-de-servico/termos-de-servico.module').then( m => m.TermosDeServicoPageModule)
+  },
+  {
+    path: 'termos-de-privacidade',
+    loadChildren: () => import('./termos-de-privacidade/termos-de-privacidade.module').then( m => m.TermosDePrivacidadePageModule)
+  },
+  {
+    path: 'termos-de-uso',
+    loadChildren: () => import('./termos-de-uso/termos-de-uso.module').then( m => m.TermosDeUsoPageModule)
+  },
 ];
 
 @NgModule({
